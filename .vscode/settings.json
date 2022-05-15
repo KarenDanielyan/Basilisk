@@ -41,5 +41,6 @@
     "cmake.configureSettings": {
         "CMAKE_TOOLCHAIN_FILE": "C:\\DEV\\vcpkg\\scripts\\buildsystems\\vcpkg.cmake",
     },
-    "cmake.configureOnOpen": true
+    "cmake.configureOnOpen": true,
+    "C_Cpp.dimInactiveRegions": true
 } 
