@@ -16,7 +16,7 @@
 #include <time.h>  // nanosleep
 #else
 #include <unistd.h>  // usleep
-#endif 
+#endif
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -50,12 +50,11 @@ b8 platform_startup(
         XAutoRepeatOff(state->display);
 
         // Retrieve the connection from the display.
-        int screen_p = 0;
         state->connection = XGetXCBConnection(state->display);
 
         if(xcb_connection_has_error(state->connection)){
             BFATAL("Failed to connect to X server via XCB.");
-            return false;
+            return FALSE;
         }
 
         // Get data from the X server
@@ -89,7 +88,7 @@ b8 platform_startup(
         u32 value_list[] = {state->screen->black_pixel, event_values};
 
         // Create the window.
-        xcv_void_cookie_t cookie = xcb_create_window(
+        xcb_void_cookie_t cookie = xcb_create_window(
             state->connection,
             XCB_COPY_FROM_PARENT, // depth
             state->window,
@@ -155,7 +154,7 @@ b8 platform_startup(
         i32 stream_result = xcb_flush(state->connection);
         if(stream_result <= 0){
             BFATAL("An error occurred when flushing the stream: %d", stream_result);
-            return false;
+            return FALSE;
         }
 
         return TRUE;
