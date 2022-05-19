@@ -34,7 +34,11 @@
         "typeinfo": "c",
         "windowsx.h": "c",
         "vulkan_platform.h": "c",
-        "renderer_frontend.h": "c"
+        "renderer_frontend.h": "c",
+        "game_types.h": "c",
+        "vector": "c",
+        "xmemory": "c",
+        "xstring": "c"
     },
     "C_Cpp.errorSquiggles": "Enabled",
     "problems.showCurrentInStatus": false,
