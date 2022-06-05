@@ -2,6 +2,7 @@
 
 #include "core/application.h"
 #include "core/logger.h"
+#include "core/bmemory.h"
 #include "game_types.h"
 
 // Externally-defined function to create a game.
@@ -11,6 +12,9 @@ extern b8 create_game(game* out_game);
  * The main entry point of the application.
  */
 int main(void) {
+
+    // Initialize the memory system.
+    initialize_memory_system();
 
     // Request game instance from the application.
     game game_inst;
@@ -35,6 +39,9 @@ int main(void) {
         BINFO("Application did not shutdown correctly.");
         return 2;
     }
+
+    // Shutdown the memory system.
+    shutdown_memory_system();
 
     return 0;
 }
