@@ -38,7 +38,8 @@
         "game_types.h": "c",
         "vector": "c",
         "xmemory": "c",
-        "xstring": "c"
+        "xstring": "c",
+        "*.rh": "c"
     },
     "C_Cpp.errorSquiggles": "Enabled",
     "problems.showCurrentInStatus": false,
